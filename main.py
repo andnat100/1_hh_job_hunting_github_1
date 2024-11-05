@@ -60,12 +60,13 @@ def load_from_db(cursor):
 # Write to a .csv file new company we found on hh.ru
 ####################################################
 def write_to_csv(c_name, pos, req, sal):
-    with open('companies.csv', 'r') as file:
+
+    with open('companies.csv', 'r', encoding="utf-8") as file:
         reader = csv.reader(file)
         for row in reader:
             x = int(row[0])  # элемент на 0 индексе в каждой строке
 
-    with open("companies.csv", "a", newline="") as file:
+    with open("companies.csv", "a", newline="", encoding="utf-8") as file:
         writer = csv.writer(file)
         writer.writerow([x+1, c_name, pos, req, sal])
 
