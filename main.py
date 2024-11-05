@@ -2,6 +2,7 @@
 #                              ПОИСК РАБОТЫ НА HH.RU
 ########################################################################################
 import sqlite3
+import csv
 
 # Company (open second window with company_class.py code on the right side)
 ###############################################################################
@@ -15,6 +16,13 @@ from binary_trees import *
 # HashTable (open second window with hash_tables.py code on the right side)
 ###############################################################################
 from hash_tables import *
+
+
+
+with open("companies.csv", "w") as f:
+    writer2 = csv.writer(f)
+    writer2.writerow([1, 2, 3])
+
 
 
 
@@ -58,6 +66,20 @@ def load_from_db(cursor):
 
 
 
+# Write to a .csv file new company we found on hh.ru
+####################################################
+def write_to_csv(c_name, pos, req, sal):
+    with open('companies.csv', 'r') as file:
+        reader = csv.reader(file)
+        for row in reader:
+            x = int(row[0])  # элемент на 0 индексе в каждой строке
+
+    with open("companies.csv", "a", newline="") as file:
+        writer = csv.writer(file)
+        writer.writerow([x+1, c_name, pos, req, sal])
+
+
+
 # insert a New info about company to HashTable class and compare its name with names in BinaryTreeAu class
 ###########################################################################################################
 def main():
@@ -84,6 +106,8 @@ def main():
             cursor.execute("INSERT INTO companies (comp_name, position, requirements, salary) VALUES (?, ?, ?, ?)",
                            (comp_name, position, requirements, salary))
             conn.commit()
+
+            write_to_csv(comp_name, position, requirements, salary)
         else:
             print("\n!!!!  YOU'VE ALREADY SENT THEM YOUR CV  !!!!")
 
