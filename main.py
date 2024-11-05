@@ -19,14 +19,6 @@ from hash_tables import *
 
 
 
-with open("companies.csv", "w") as f:
-    writer2 = csv.writer(f)
-    writer2.writerow([1, 2, 3])
-
-
-
-
-
 
 # Create a .db file and table if it's not yet exist
 ###################################################
