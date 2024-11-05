@@ -1,1 +1,5 @@
-0,company,position,requirements,salary1,J*****d,BI-аналитик (junior),"Metabase; MySQL; Airflow; DBT; Docker; Python; A/B testing",800002,V*********p,Junior Python разработчик,"Python; API; SQL",300003,К*******п,Стажер в департамент IT,"Python, Git, English B1",0
+0,comp_name,position,requirements,salary
+1,J*****d,BI-аналитик (junior),"Metabase, MySQL, Airflow, DBT, Docker, Python, A/B testing",80000
+2,V*********p,Junior Python разработчик,"Python, API, SQL",30000
+3,К*******п,Стажер в департамент IT,"Python, Git, English B1",0
+4,И******************************ч,Стажер Python-разработчик,"Python, OOP, PyPDF2, OCR, re, Git and Github",20000

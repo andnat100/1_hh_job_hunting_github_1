@@ -19,7 +19,6 @@ from hash_tables import *
 
 
 
-
 # Create a .db file and table if it's not yet exist
 ###################################################
 
